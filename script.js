@@ -35,6 +35,31 @@ function createGrid(rows = 16){
     body.appendChild(grid);
 }
 
+const button = document.querySelector("button");
+button.addEventListener("click", () =>{
+    let input = prompt("How many squares would you like in one side of the grid?\nPlease enter a value from 1-100");
+    while (!isValidNumber(input)){
+        input = prompt("Invalid input.\nHow many squares would you like in one side of the grid?\nPlease enter a value from 1-100");
+    }
+    if (input == null){
+        return;
+    }
+    const body = document.querySelector("body");
+    const grid = document.querySelector(".grid");
+    body.removeChild(grid);
+    createGrid(input);
+});
 
+function isValidNumber(value){
+    if (value == null){
+        return true;
+    }
+    if (!Number.isNaN(value)){
+        if (value > 0 && value < 101){
+            return true;
+        }
+    }
+    return false;
+}
 
 createGrid();
