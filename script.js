@@ -5,6 +5,9 @@ function createSquare(){
     const square = document.createElement("div");
     square.classList.add("square");
     square.setAttribute("style", "border: solid; flex: 1 1 0;");
+    square.addEventListener("mouseover", (event)=>{
+        event.target.style.background = "black";
+    });
     return square;
 }
 
