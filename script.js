@@ -4,7 +4,7 @@ const grid = document.querySelector("#grid");
 function createSquare(){
     const square = document.createElement("div");
     square.classList.add("square");
-    square.setAttribute("style", "border: solid; flex: 1 1 0;");
+    square.setAttribute("style", "flex: 1 1 0;");
     square.addEventListener("mouseover", (event)=>{
         event.target.style.background = "black";
     });
@@ -26,7 +26,7 @@ function createGrid(rows = 16){
     const body = document.querySelector("body");
     const grid = document.createElement("div");
     grid.classList.add("grid");
-    grid.setAttribute("style", "width: 960px; height: 960px; display: flex; flex-direction: column;");
+    grid.setAttribute("style", "border: solid; width: 960px; height: 960px; display: flex; flex-direction: column;");
     for (let i = 0; i < rows; i++){
         const row = createRow(rows);
 
